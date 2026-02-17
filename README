@@ -1,0 +1,24 @@
+# Secure Linux company system 🛡️
+
+## Overview
+This project demonstrates the implementation of a secure, multi-departmental Linux environment. It focuses on the **Principle of Least Privilege (PoLP)** and advanced Linux file system permissions to ensure data isolation and integrity within a corporate setting.
+
+## 🚀 Key Features
+* **Departmental Isolation:** Created 8 distinct departments (Cyber, Finance, IT, etc.) with dedicated groups and users.
+* **Advanced Permissions (2770):** * `2` (SGID): Ensures all new files inherit the department's group ownership.
+    * `770`: Restricts access entirely to the owner and group members, blocking "others" from even listing directory contents.
+* **Sticky Bit (+t):** Implemented to prevent users from deleting or renaming files created by their colleagues within the same department.
+* **Automation:** Bash scripts provided to automate user creation, group assignment, and permission hardening.
+
+## 🛠️ Technical Details
+* **Environment:** Linux (Ubuntu/Kali)
+* **Security Mechanisms:** SGID, Sticky Bit, Octal Permissions (2770).
+* **Structure:**
+    * `Teams.sh`: Automates user creation with specific UIDs.
+    * `Groups.sh`: Sets up GIDs for departmental alignment.
+    * `Permissions.sh`: Hardens the directory structure.
+
+## 📂 Directory Structure Preview
+```text
+drwxrws--T  root  Cyber     (Group members can read/write; others blocked)
+drwxrws--T  root  Finance   (Isolation via 2770 + Sticky Bit)
