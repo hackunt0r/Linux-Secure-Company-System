@@ -38,4 +38,5 @@ useradd -m -u 1044 -g Web_Devs -s /bin/bash web1
 useradd -m -u 1045 -g Web_Devs -s /bin/bash web2  
 useradd -m -u 1046 -g Web_Devs -s /bin/bash web3  
 
+#Ensure that all the users created and added to the proper group
 getent passwd | grep -E 'lead|cyber|cloud|dev|finance|it|marketing|web'
